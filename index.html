@@ -25,8 +25,24 @@
             <input id='input-money' type="text" placeholder="输入总金额" value="">
         </div>
         <div class="keyboard">
-
+            <button id='pay' type="button" name="button">确认</button>
         </div>
 
     </body>
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+    <script>
+    let log = console.log.bind(console)
+
+    let pay = function () {
+        let money = document.querySelector('#input-money')
+        log(money)
+        let qian = money.value
+        log(qian)
+    }
+    pay()
+
+    $('#pay').on('click', function () {
+        pay()
+    })
+    </script>
 </html>
