@@ -4,26 +4,44 @@
         <meta charset="utf-8">
         <title>微信支付</title>
         <link href="https://www.bigc.cc/mer/mer.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     </head>
     <style>
         .head {
-            margin-top: 5%;
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            margin-top: 10%;
+            color: #949494;
+        }
+        .head input {
+            padding-left: 1.5rem
+        }
+        .test {
+            position: relative;
+            right: 35%;
+            /*text-align: left;*/
+            top: -3rem;
+            /*width: 90%;*/
         }
         #input-money {
-            font-size: 1.8rem;
-            border-top: 2px solid;
-            border-left: 2px solid;
-            border-right: 2px solid;
-            border-bottom: 2px solid;
+            font-size: 1rem;
+            border-top: 1px solid;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
             border-color: rgba(19, 183, 246, 1);
-            width: 80%;
+            width: 90%;
             height: 5rem;
         }
     </style>
     <body>
         <div class="head">
-            <input id='input-money' type="text" placeholder="输入总金额" value="">
+            <input dir="rtl" id='input-money' type="tel" autofocus="autofocus" placeholder="" value="">
+            <div class="test">输入总金额</div>
         </div>
+        <!-- <div class="jp">
+        </div> -->
         <div class="keyboard">
             <button id='pay' type="button" name="button">确认</button>
         </div>
@@ -32,14 +50,16 @@
     <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
     <script>
     let log = console.log.bind(console)
+    let money = document.querySelector('#input-money')
+    // log(money)
+
+
 
     let pay = function () {
-        let money = document.querySelector('#input-money')
-        log(money)
         let qian = money.value
         log(qian)
     }
-    pay()
+    // pay()
 
     $('#pay').on('click', function () {
         pay()
