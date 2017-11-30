@@ -7,6 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     </head>
     <style>
+        .all {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /*align-items: center;*/
+        }
         .head {
             /*display: flex;*/
             /*justify-content: center;*/
@@ -34,17 +40,84 @@
             width: 90%;
             height: 5rem;
         }
+        .jp {
+            display: flex;
+            /*justify-content: center;*/
+            flex-wrap: wrap;
+            /*font-size: 1.5rem;*/
+            /*width: 80%;*/
+            /*margin: 1rem auto;*/
+            /*padding: .5rem 0;*/
+        }
+        .firstLine {
+            flex-basis: 100%;
+            display:flex;
+        }
+        .secondLine {
+            flex-basis: 100%;
+            display:flex;
+        }
+        .thirdLine {
+            flex-basis: 100%;
+            display:flex;
+        }
+        .fourthLine {
+            flex-basis: 100%;
+            display:flex;
+        }
+        .number {
+            border: 1px solid gray;
+            background: white;
+            font-size: 1.5rem;
+            width: 25%;
+            height:50px;
+            margin: 0px;
+        }
+        .zero {
+            width: 50%;
+        }
+        .OK {
+            position: relative;
+            font-size: 1rem;
+            top: -100px;
+            height: 150px;
+            background-color: rgba(19, 183, 246, 1);
+        }
     </style>
     <body>
-        <div class="head">
-            <input dir="rtl" id='input-money' type="tel" autofocus="autofocus" placeholder="" value="">
-            <div class="test">输入总金额</div>
+        <div class="all">
+            <div class="head">
+                <input dir="rtl" id='input-money' type="tel" autofocus="autofocus" placeholder="" value="">
+                <span class="test">输入总金额</span>
+            </div>
+            <div class="jp">
+                <div class="firstLine">
+                    <button id="1" class="number" type="button" name="button">1</button>
+                    <button id="2" class="number" type="button" name="button">2</button>
+                    <button id="3" class="number" type="button" name="button">3</button>
+                    <button id="back" class="number" type="button" name="button"><</button>
+                </div>
+                <div class="secondLine">
+                    <button id="4" class="number" type="button" name="button">4</button>
+                    <button id="5" class="number" type="button" name="button">5</button>
+                    <button id="6" class="number" type="button" name="button">6</button>
+                </div>
+                <div class="thirdLine">
+                    <button id="7" class="number" type="button" name="button">7</button>
+                    <button id="8" class="number" type="button" name="button">8</button>
+                    <button id="9" class="number" type="button" name="button">9</button>
+                </div>
+                <div class="fourthLine">
+                    <button id="0" class="number zero" type="button" name="button">0</button>
+                    <button id="." class="number" type="button" name="button">.</button>
+                    <button id="Ok" class="number OK" type="button" name="button">确认支付</button>
+                </div>
+            </div>
         </div>
-        <!-- <div class="jp">
-        </div> -->
-        <div class="keyboard">
+
+        <!-- <div class="keyboard">
             <button id='pay' type="button" name="button">确认</button>
-        </div>
+        </div> -->
 
     </body>
     <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
