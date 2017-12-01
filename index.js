@@ -21,7 +21,23 @@ let time = function(z) {
     // log(Year,Month,Da)
     return `${Year}-${Month}-${Day}`
 }
-time()
+
+// let d = new Date()
+// let nowDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+
+// 时间戳生成
+let date = Date.now().toString()
+log(Date.now())
+log(date)
+
+// package生成
+// let pkg = 'prepay_id=' + payInfo.prepay_id
+
+// 签名生成
+// let str = "appId=" + appid + "&nonceStr=" + nonce + "&package=" + pkg + "&signType=MD5&timeStamp=" + ttt + "&key=WWWilandcc20170415qazVFRwsx321PL"
+// md5加密
+// let sign = (md5.hexMD5(str)).toUpperCase()
+
 
 let money = document.querySelector('#input-money')
 // log(money)
