@@ -46,6 +46,7 @@ let qian = money.value
 
 // 获得景区ID和商户ID
 // let ID = function () {
+//     let lujing = location.search
 //     let scene_id =
 // }
 
@@ -62,21 +63,50 @@ let confirmWxpay = function () {
         method: 'POST',
         success: function (res) {
             log(res)
-
+            su['order_id'] = res.info.order_id
+            log(su['order_id'])
         }
     })
     $.ajax(request)
 }
 confirmWxpay()
 
+let order_pay = function () {
+    let request = ({
+        url: "http://120.79.12.95/scene/order_pay",
+        data: {
+            "device":  "H5_Web",
+            "appname": "second_consume",
+            "visitor_id": 0,
+            "order_id": su['order_id'],
+        },
+        header: {
+             "Content-Type": "application/json"
+         },
+        method: 'POST',
+        success: function (res) {
+            let date = JSON.parse(res)
+            log(date)
+            let msg = date.wx_result
+            let er = JSON.parse(msg)
+            log(er)
+        }
+
+    })
+    $.ajax(request)
+}
+
+let pay = function () {
+    $('#Ok').on('click', function() {
+        order_pay()
+    })
+}
+pay()
+
 // 点击按钮事件
 let click = function () {
     $('#one').on('click', function() {
-        // log('1')
-        // let qian = money.value
-        log(qian)
-        qian = qian + 1
-        log(qian)
+        log(su['order_id'])
     })
 
     $('#two').on('click', function() {
@@ -121,12 +151,6 @@ let click = function () {
 
     $('#dian').on('click', function() {
         log('.')
-    })
-
-    $('#Ok').on('click',function() {
-        log('Ok')
-        // let qian = money.value
-        // log(qian)
     })
 }
 click()
