@@ -1,5 +1,5 @@
 let log = console.log.bind(console)
-
+const su = {}
 // 获得时间
 let time = function(z) {
     if (z === undefined) {
@@ -30,6 +30,7 @@ let date = Date.now().toString()
 log(Date.now())
 log(date)
 
+
 // package生成
 // let pkg = 'prepay_id=' + payInfo.prepay_id
 
@@ -42,6 +43,31 @@ log(date)
 let money = document.querySelector('#input-money')
 // log(money)
 let qian = money.value
+
+// 获得景区ID和商户ID
+// let ID = function () {
+//     let scene_id =
+// }
+
+let confirmWxpay = function () {
+    let request = ({
+        url: "http://120.79.12.95/newapi/secondconsume/confirmWxpay",
+        data: {
+            "device": "H5_Web",
+            "appname": "second_consume",
+            "scene_id": 1,
+            "channel_id": 1,
+            "pay_money": 0.01,
+        },
+        method: 'POST',
+        success: function (res) {
+            log(res)
+
+        }
+    })
+    $.ajax(request)
+}
+confirmWxpay()
 
 // 点击按钮事件
 let click = function () {
