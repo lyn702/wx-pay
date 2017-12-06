@@ -50,6 +50,31 @@ let qian = money.value
 //     let scene_id =
 // }
 
+// 获取信息
+// let info = function () {
+//     let request = ({
+//         url: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx51018c645874080f&redirect_uri=https://leyuanxing.net/second_consume/index.html&response_type=code&scope=snsapi_base&state=1#wechat_redirect",
+//         "?appid"="wx51018c645874080f"
+//         method: 'GET',
+//         success:function (res) {
+//             log(res)
+//         }
+//     })
+//     $.ajax(request)
+// }
+// info()
+
+// 当前页面地址
+// "https://leyuanxing.net/second_consume/index.html"
+// appId
+// appid=wx51018c645874080f
+// response_type
+// code
+
+
+
+// 统一下单 ?
+
 let confirmWxpay = function () {
     let request = ({
         url: "http://120.79.12.95/newapi/secondconsume/confirmWxpay",
@@ -87,9 +112,11 @@ let order_pay = function () {
         success: function (res) {
             let date = JSON.parse(res)
             log(date)
-            let msg = date.wx_result
-            let er = JSON.parse(msg)
-            log(er)
+            let payInfo = JSON.parse(date.wx_result)
+            log(payInfo)
+            // if (payInfo.return_code = ) {
+            //
+            // }
         }
 
     })
